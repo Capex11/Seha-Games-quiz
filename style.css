@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.game-container {
+    /* Typical mobile vertical aspect ratio 9:16 */
+    aspect-ratio: 9 / 16;
+    height: 100%;
+    max-width: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    /* transition: background-image 0.3s ease-in-out; */
+}
+
+/* On wider screens, restrict width based on aspect ratio */
+@media (min-aspect-ratio: 9/16) {
+    .game-container {
+        width: auto;
+        height: 100vh;
+    }
+}
+
+/* On taller screens, restrict height based on aspect ratio */
+@media (max-aspect-ratio: 9/16) {
+    .game-container {
+        width: 100vw;
+        height: auto;
+    }
+}
+
+/* Invisible clickable buttons */
+.quiz-btn {
+    position: absolute;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    /* Optional: add a subtle highlight on hover/active to show it's interactive */
+    transition: background 0.2s;
+    outline: none;
+}
+
+.quiz-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.quiz-btn:active {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Approximate positions based on the image layout */
+/* The buttons are on the right side, taking up about 42% of width */
+#btn1 {
+    top: 47%;
+    left: 52%;
+    width: 42%;
+    height: 8%;
+}
+
+#btn2 {
+    top: 56.5%;
+    left: 52%;
+    width: 42%;
+    height: 8%;
+}
+
+#btn3 {
+    top: 66%;
+    left: 52%;
+    width: 42%;
+    height: 8%;
+}
